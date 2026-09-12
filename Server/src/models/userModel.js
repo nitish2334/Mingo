@@ -16,12 +16,15 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
+    },
+    google_id: {
+      type: String,
+    },
+    loginType: {
+      type: String,
+      enum: ["normal_user", "google_user", "hybrid_user"],
       required: true,
     },
-
-    google_id:{
-      type : String,
-    }
   },
   { timestamps: true },
 );
